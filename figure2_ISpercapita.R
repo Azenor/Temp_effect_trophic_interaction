@@ -44,7 +44,7 @@ aPH_topt = rBAU(temp = Topt, m = bmHg, par_br = par_aPH)
 
 ## Save as tiff
 
-tiff("~/GitHub/Article-projet-master/figureManus2/figure2.tiff",  width = 3.3,  height = 3.3,  units  =  'in',  res  =  300)
+tiff("./figures/figure2.tiff",  width = 3.3,  height = 3.3,  units  =  'in',  res  =  300)
 par(xaxs = 'i', yaxs = 'i', mar = c(2.5,  2,  1,  1))
 
 ylim = c(min(aPH_seq), max(aPH_seq))
@@ -69,7 +69,7 @@ lines(temp_seq, aPH_seq, lwd = 2)
 dev.off()
 
 ## Save as pdf
-pdf("~/GitHub/Article-projet-master/figureManus2/figure2.pdf",  width = 3.3,  height = 3.3)
+pdf("./figures/figure2.pdf",  width = 3.3,  height = 3.3)
 par(xaxs = 'i', yaxs = 'i', mar = c(2.5,  2,  1,  1))
 
 ylim = c(min(aPH_seq), max(aPH_seq))

@@ -1,6 +1,4 @@
 rm(list = ls())
-setwd("~/GitHub/Article-projet-master/scripts")
-
 ##### Script for manuscript "Temperature modifies
 ##### consumer-resource interaction strength through
 ##### its effects on biological rates and body mass"
@@ -109,7 +107,7 @@ for (i in 1:length(mseq)){
 
 ## save as tiff
 
-tiff("~/GitHub/Article-projet-master/figureManus2/figure4.tiff",  width = 7,  height = 4,  units  =  'in',  res  =  300)
+tiff("./figures/figure4.tiff",  width = 7,  height = 4,  units  =  'in',  res  =  300)
 
 #par(xaxs = 'i', yaxs = 'i', mar = c(2.5,  2,  1,  1))
 layout(matrix(1:3, ncol = 3),  width  =  c(3, 3, 1), height  =  c(1, 1, 1))
@@ -171,7 +169,7 @@ dev.off()
 
 ## save as pdf
 
-pdf("~/GitHub/Article-projet-master/figureManus2/figure4.pdf",  width = 7,  height = 4)
+pdf("./figures/figure4.pdf",  width = 7,  height = 4)
 
 #par(xaxs = 'i', yaxs = 'i', mar = c(2.5,  2,  1,  1))
 layout(matrix(1:3, ncol = 3),  width  =  c(3, 3, 1), height  =  c(1, 1, 1))
@@ -264,7 +262,7 @@ for(j in 1:length(resEquiBiom[[1]])){
 
 # save as tiff
 
-tiff("~/GitHub/Article-projet-master/figureManus2/figureS3.tiff",  width = 10,  height = 6,  units  =  'in',  res  =  300)
+tiff("./figures/figureS3.tiff",  width = 10,  height = 6,  units  =  'in',  res  =  300)
 
 layout(matrix(c(1, 2, 3, 4, 5,
                 6, 7, 8, 9, 9),  nrow  =  2,  ncol  =  5,  byrow  =  F),  width  =  c(1, 1, 1, 1, 0.3))
@@ -292,7 +290,7 @@ dev.off()
 
 ## save as pdf
 
-pdf("~/GitHub/Article-projet-master/figureManus2/figureS3.pdf",  width = 10,  height = 6)
+pdf("./figures/figureS3.pdf",  width = 10,  height = 6)
 
 layout(matrix(c(1, 2, 3, 4, 5,
                 6, 7, 8, 9, 9),  nrow  =  2,  ncol  =  5,  byrow  =  F),  width  =  c(1, 1, 1, 1, 0.3))

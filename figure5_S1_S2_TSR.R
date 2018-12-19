@@ -1,6 +1,4 @@
 rm(list=ls())
-setwd("~/GitHub/Article-projet-master/scripts")
-
 ##### Script for manuscript "Temperature modifies
 ##### consumer-resource interaction strength through
 ##### its effects on biological rates and body mass"
@@ -119,7 +117,7 @@ logISnet_CHTSR_PH=reslogISnetTSR_PH$ISnetCH
 #### PLOT MANUSCRIPT ####
 
 # save as tiff
-tiff("~/GitHub/Article-projet-master/figureManus2/figure5.tiff", width=7, height=4, units = 'in', res = 300)
+tiff("./figures/figure5.tiff", width=7, height=4, units = 'in', res = 300)
 
 ### Plot IS pop
 layout(matrix(1:3,ncol=3), width = c(3,3,1),height = c(1,1,1))
@@ -177,7 +175,7 @@ par(oldMar)
 dev.off()
 
 
-pdf("~/GitHub/Article-projet-master/figureManus2/figure5.pdf", width=7, height=4)
+pdf("./figures/figure5.pdf", width=7, height=4)
 
 ### Plot IS pop
 layout(matrix(1:3,ncol=3), width = c(3,3,1),height = c(1,1,1))
@@ -237,7 +235,7 @@ dev.off()
 ###### FIGURE Supplementary Materials ######
 
 ## Figure S1 : parameters according to temperature with and without TSR ##
-pdf("~/GitHub/Article-projet-master/figureManus2/figureS1.pdf", width = 10, height = 8)
+pdf("./figures/figureS1.pdf", width = 10, height = 8)
 par(mfrow=c(2,3))
 
 plot(temp_seq ,mu_seq, ylim = c(min(mu_seq,mu_seqTSR), max(mu_seq,mu_seqTSR)), type = "l",
@@ -270,7 +268,7 @@ dev.off()
 
 ## save as tiff
 
-tiff("~/GitHub/Article-projet-master/figureManus2/figureS2.tiff", width=10, height=7, units = 'in', res = 300)
+tiff("./figures/figureS2.tiff", width=10, height=7, units = 'in', res = 300)
 par(mfrow=c(2,4))
 
 for(i in 1:length(resEquiBiom)){
@@ -287,7 +285,7 @@ dev.off()
 
 ## save as pdf
 
-pdf("~/GitHub/Article-projet-master/figureManus2/figureS2.pdf", width=10, height=7)
+pdf("./figures/figureS2.pdf", width=10, height=7)
 par(mfrow=c(2,4))
 
 for(i in 1:length(resEquiBiom)){

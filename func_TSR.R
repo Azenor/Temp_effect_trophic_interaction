@@ -1,5 +1,3 @@
-setwd("~/GitHub/Article-projet-master/scripts")
-
 ##### Script for manuscript "Effect of temperature on
 ##### consumer-resource interaction strength"
 

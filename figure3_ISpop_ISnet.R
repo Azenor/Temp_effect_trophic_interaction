@@ -275,9 +275,6 @@ matdataSD = as.matrix(dataSD)
 matdataSD = matdataSD[-2, ]
 matdataSD2 = t(apply(matdataSD, 1, rev))
 
-#setEPS()
-#postscript("~/GitHub/Article-projet-master/figureManus2/figure3.eps", onefile = FALSE, paper  =  "special", width = 7,  height = 4)
-
 pdf("./figures/figure3.pdf", width = 7, height = 4)
 
 par(mfrow = c(1, 2),  mar = c(2, 2, 4.1, 2.1),  oma = c(0, 2, 0, 2), mgp  =  c(1.5,  0.6,  0),  tck  =  -.015,  family  =  'sans')

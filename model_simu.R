@@ -1,5 +1,4 @@
 rm(list = ls())
-setwd("~/GitHub/Article-projet-master/scripts")
 
 ##### Script for manuscript "Effect of temperature on
 ##### consumer-resource interaction strength"
@@ -52,7 +51,6 @@ model2 = function(time, state, par) { # dynamical system nutrients-plants
 equBiom = equiBiom(param)
 
 Time = seq(0, 100, 0.1)
-
 
 ## Simulation ##
 
