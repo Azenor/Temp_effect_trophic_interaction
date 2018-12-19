@@ -1,6 +1,4 @@
 rm(list = ls())
-setwd("~/GitHub/Article-projet-master/scripts")
-
 ##### Script for manuscript "Temperature modifies
 ##### consumer-resource interaction strength through
 ##### its effects on biological rates and body mass"
@@ -280,7 +278,7 @@ matdataSD2 = t(apply(matdataSD, 1, rev))
 #setEPS()
 #postscript("~/GitHub/Article-projet-master/figureManus2/figure3.eps", onefile = FALSE, paper  =  "special", width = 7,  height = 4)
 
-pdf("~/GitHub/Article-projet-master/figureManus2/figure3.pdf", width = 7, height = 4)
+pdf("./figures/figure3.pdf", width = 7, height = 4)
 
 par(mfrow = c(1, 2),  mar = c(2, 2, 4.1, 2.1),  oma = c(0, 2, 0, 2), mgp  =  c(1.5,  0.6,  0),  tck  =  -.015,  family  =  'sans')
 
@@ -314,7 +312,7 @@ dev.off()
 
 ### Figure for legend
 par(mfrow = c(1, 1))
-pdf("~/GitHub/Article-projet-master/figureManus2/legend_figure3.pdf",  width = 3.3,  height = 3.3)
+pdf("./figures/legend_figure3.pdf",  width = 3.3,  height = 3.3)
 
 par(xaxs = 'i', yaxs = 'i', mar = c(2.5,  2,  1,  1))
 

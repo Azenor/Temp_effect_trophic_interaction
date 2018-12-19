@@ -1,6 +1,4 @@
 rm(list = ls())
-setwd("~/GitHub/Article-projet-master/scripts")
-
 ##### Script for manuscript "Temperature modifies
 ##### consumer-resource interaction strength through
 ##### its effects on biological rates and body mass"
@@ -14,7 +12,7 @@ setwd("~/GitHub/Article-projet-master/scripts")
 
 ## Sourced scripts
 
-source('/home/local/USHERBROOKE/bida2502/GitHub/Article-projet-master/scripts/func_tempDEP.R')
+source('func_tempDEP.R')
 
 # temperature
 temp_seq = seq(280, 320, length.out = 50)
