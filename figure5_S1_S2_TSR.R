@@ -1,4 +1,3 @@
-rm(list=ls())
 ##### Script for manuscript "Temperature modifies
 ##### consumer-resource interaction strength through
 ##### its effects on biological rates and body mass"

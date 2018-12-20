@@ -1,5 +1,6 @@
-##### Script for manuscript "Effect of temperature on
-##### consumer-resource interaction strength"
+##### Script for manuscript "Temperature modifies
+##### consumer-resource interaction strength through
+##### its effects on biological rates and body mass"
 
 ## This script:
 ## Gives the model parameter values
