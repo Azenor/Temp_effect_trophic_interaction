@@ -26,14 +26,17 @@ paramTSR=list(d=D,Nin=Nin,q=q,effPH=ePH,effHC=eHC,
            mu=mu_seqTSR,zP=zP_seqTSR,zH=zH_seqTSR,aPH=aPH_seqTSR,zC=zC_seqTSR,aHC=aHC_seqTSR,
            mP=mP,mH=mH,mC=mC)
 
-paramTSR_PH=list(d=D,Nin=Nin,q=q,effPH=ePH,effHC=eHC,
-              mu=mu_seqTSR,zP=zP_seqTSR,zH=zH_seqTSR,aPH=aPH_seqTSR,zC=zC_seq,aHC=aHC_seq,
-              mP=mP,mH=mH,mC=mC)
+paramTSR_H=list(d=D,Nin=Nin,q=q,effPH=ePH,effHC=eHC,
+           mu=mu_seq,zP=zP_seq,zH=zH_seqTSR,aPH=aPH_seqTSR,zC=zC_seq,aHC=aHC_seq,
+           mP=mP,mH=mH,mC=mC)
 
+paramTSR_C=list(d=D,Nin=Nin,q=q,effPH=ePH,effHC=eHC,
+           mu=mu_seq,zP=zP_seq,zH=zH_seq,aPH=aPH_seq,zC=zC_seqTSR,aHC=aHC_seqTSR,
+           mP=mP,mH=mH,mC=mC)
 
-paramTSR_P=list(d=D,Nin=Nin,q=q,effPH=ePH,effHC=eHC,
-              mu=mu_seqTSR,zP=zP_seqTSR,zH=zH_seq,aPH=aPH_seq,zC=zC_seq,aHC=aHC_seq,
-              mP=mP,mH=mH,mC=mC)
+paramTSR_HC=list(d=D,Nin=Nin,q=q,effPH=ePH,effHC=eHC,
+           mu=mu_seq,zP=zP_seq,zH=zH_seqTSR,aPH=aPH_seqTSR,zC=zC_seqTSR,aHC=aHC_seqTSR,
+           mP=mP,mH=mH,mC=mC)
 
 ## Equilibrium biomasses ##
 equiBiom_names = c(expression(P[equ[1]]), expression(N[equ[2]]), expression(P[equ[2]]), expression(H[equ[2]]),
@@ -45,11 +48,15 @@ resEquiBiom=equiBiom(param)
 # TSR
 resEquiBiomTSR=equiBiom(paramTSR)
 
-# TSR P only
-resEquiBiomTSR_P=equiBiom(paramTSR_P)
+# TSR H only
+resEquiBiomTSR_H=equiBiom(paramTSR_H)
 
-# TSR P & H only
-resEquiBiomTSR_PH=equiBiom(paramTSR_PH)
+# TSR C only
+resEquiBiomTSR_C=equiBiom(paramTSR_C)
+
+# TSR H and C
+resEquiBiomTSR_HC=equiBiom(paramTSR_HC)
+
 
 ## Interaction strength per population ##
 
@@ -67,19 +74,26 @@ logISpop_H2=reslogISpop$ISpopH2
 logISpop_H3=reslogISpop$ISpopH3
 logISpop_C3=reslogISpop$ISpopC3
 
-# TSR P only
-reslogISpopTSR_P=logISpop(resEquiBiomTSR_P,aPH_seq,aHC_seq)
+# TSR H only
+reslogISpopTSR_H = logISpop(resEquiBiomTSR_H, aPH_seqTSR, aHC_seq)
 
-logISpop_H2TSR_P=reslogISpopTSR_P$ISpopH2
-logISpop_H3TSR_P=reslogISpopTSR_P$ISpopH3
-logISpop_C3TSR_P=reslogISpopTSR_P$ISpopC3
+logISpop_H2TSR_H=reslogISpopTSR_H$ISpopH2
+logISpop_H3TSR_H=reslogISpopTSR_H$ISpopH3
+logISpop_C3TSR_H=reslogISpopTSR_H$ISpopC3
 
-# TSR P & H only
-reslogISpopTSR_PH=logISpop(resEquiBiomTSR_PH,aPH_seqTSR,aHC_seq)
+# TSR C only
+reslogISpopTSR_C = logISpop(resEquiBiomTSR_C, aPH_seq, aHC_seqTSR)
 
-logISpop_H2TSR_PH=reslogISpopTSR_PH$ISpopH2
-logISpop_H3TSR_PH=reslogISpopTSR_PH$ISpopH3
-logISpop_C3TSR_PH=reslogISpopTSR_PH$ISpopC3
+logISpop_H2TSR_C=reslogISpopTSR_C$ISpopH2
+logISpop_H3TSR_C=reslogISpopTSR_C$ISpopH3
+logISpop_C3TSR_C=reslogISpopTSR_C$ISpopC3
+
+# TSR H and C
+reslogISpopTSR_HC = logISpop(resEquiBiomTSR_HC, aPH_seqTSR, aHC_seqTSR)
+
+logISpop_H2TSR_HC=reslogISpopTSR_HC$ISpopH2
+logISpop_H3TSR_HC=reslogISpopTSR_HC$ISpopH3
+logISpop_C3TSR_HC=reslogISpopTSR_HC$ISpopC3
 
 ## Net interaction strength ##
 
@@ -97,21 +111,27 @@ logISnet_HP=reslogISnet$ISnetHP
 logISnet_CP=reslogISnet$ISnetCP
 logISnet_CH=reslogISnet$ISnetCH
 
-# TSR P only
+# TSR H only
+reslogISnetTSR_H=logISnet(resEquiBiomTSR_H)
 
-reslogISnetTSR_P=logISnet(resEquiBiomTSR_P)
+logISnet_HPTSR_H=reslogISnetTSR_H$ISnetHP
+logISnet_CPTSR_H=reslogISnetTSR_H$ISnetCP
+logISnet_CHTSR_H=reslogISnetTSR_H$ISnetCH
 
-logISnet_HPTSR_P=reslogISnetTSR_P$ISnetHP
-logISnet_CPTSR_P=reslogISnetTSR_P$ISnetCP
-logISnet_CHTSR_P=reslogISnetTSR_P$ISnetCH
+# TSR C only
+reslogISnetTSR_C=logISnet(resEquiBiomTSR_C)
 
-# TSR P & H only
+logISnet_HPTSR_C=reslogISnetTSR_C$ISnetHP
+logISnet_CPTSR_C=reslogISnetTSR_C$ISnetCP
+logISnet_CHTSR_C=reslogISnetTSR_C$ISnetCH
 
-reslogISnetTSR_PH=logISnet(resEquiBiomTSR_PH)
+# TSR HC
+reslogISnetTSR_HC=logISnet(resEquiBiomTSR_H)
 
-logISnet_HPTSR_PH=reslogISnetTSR_PH$ISnetHP
-logISnet_CPTSR_PH=reslogISnetTSR_PH$ISnetCP
-logISnet_CHTSR_PH=reslogISnetTSR_PH$ISnetCH
+logISnet_HPTSR_HC=reslogISnetTSR_HC$ISnetHP
+logISnet_CPTSR_HC=reslogISnetTSR_HC$ISnetCP
+logISnet_CHTSR_HC=reslogISnetTSR_HC$ISnetCH
+
 
 #### PLOT MANUSCRIPT ####
 
@@ -121,8 +141,8 @@ tiff("./figures/figure5.tiff", width=7, height=4, units = 'in', res = 300)
 ### Plot IS pop
 layout(matrix(1:3,ncol=3), width = c(3,3,1),height = c(1,1,1))
 
-ylimC3pop=c(min(logISpop_C3,logISpop_C3TSR,logISpop_C3TSR_P,logISpop_C3TSR_PH)
-            ,max(logISpop_C3,logISpop_C3TSR,logISpop_C3TSR_P,logISpop_C3TSR_PH)+0.1)
+ylimC3pop=c(min(logISpop_C3,logISpop_C3TSR,logISpop_C3TSR_H,logISpop_C3TSR_C,logISpop_C3TSR_HC)
+            ,max(logISpop_C3,logISpop_C3TSR,logISpop_C3TSR_H,logISpop_C3TSR_C,logISpop_C3TSR_HC)+0.1)
 
 rylimC3pop=round(ylimC3pop,2)
 
@@ -136,8 +156,10 @@ axis(1,tck = -0.015,at=seq(min(temp_seq),max(temp_seq),10),labels=seq(min(temp_s
 
 lines(temp_seq,logISpop_C3,lwd=2)
 lines(temp_seq,logISpop_C3TSR,lwd=2,lty=2)
-lines(temp_seq,logISpop_C3TSR_P,lwd=2,lty=3)
-lines(temp_seq,logISpop_C3TSR_PH,lwd=2,lty=4)
+lines(temp_seq,logISpop_C3TSR_H,lwd=2,lty=3)
+lines(temp_seq,logISpop_C3TSR_C,lwd=2,lty=4)
+lines(temp_seq,logISpop_C3TSR_HC,lwd=2,lty=5)
+
 
 mtext(text=expression(log(IS[pop[C-H]])),side=2,line=1,font=1,cex=1)
 mtext(text='Temperature',side=1,line=2.5,font=1,cex=1)
@@ -145,8 +167,8 @@ mtext(expression(bold((A))), side = 3, at=298,line = 0, outer = FALSE,cex=1)
 
 ### Plot ISnet
 
-ylimC3net=c(min(logISnet_CH,logISnet_CHTSR,logISnet_CHTSR_P,logISnet_CHTSR_PH)
-            ,max(logISnet_CH,logISnet_CHTSR,logISnet_CHTSR_P,logISnet_CHTSR_PH)+0.1)
+ylimC3net=c(min(logISnet_CH,logISnet_CHTSR,logISnet_CHTSR_H, logISnet_CHTSR_C, logISnet_CHTSR_HC)
+            ,max(logISnet_CH,logISnet_CHTSR, logISnet_CHTSR_H, logISnet_CHTSR_C, logISnet_CHTSR_C)+0.1)
 rylimC3net=round(ylimC3net,2)
 
 plot(temp_seq,logISnet_CH,ylim=rylimC3net,
@@ -159,8 +181,10 @@ axis(1,tck = -0.015,at=seq(min(temp_seq),max(temp_seq),10),labels=seq(min(temp_s
 
 lines(temp_seq,logISnet_CH,lwd=2)
 lines(temp_seq,logISnet_CHTSR,lwd=2,lty=2)
-lines(temp_seq,logISnet_CHTSR_P,lwd=2,lty=3)
-lines(temp_seq,logISnet_CHTSR_PH,lwd=2,lty=4)
+lines(temp_seq,logISnet_CHTSR_H,lwd=2,lty=3)
+lines(temp_seq,logISnet_CHTSR_C,lwd=2,lty=4)
+lines(temp_seq,logISnet_CHTSR_HC,lwd=2,lty=5)
+
 
 mtext(text=expression(log(IS[net[C-H]])),side=2,line=1,font=1,cex=1)
 mtext(text='Temperature',side=1,line=2.5,font=1,cex=1)
@@ -168,8 +192,9 @@ mtext(expression(bold((B))), side = 3, at=298,line = 0, outer = FALSE,cex=1)
 
 oldMar <- par(mar = c(0,0,0,0))
 plot.new()
-legend("center",legend=c("None","P", "PH","PHC"),inset=0,lty=c(1,3,4,2),bty="n",cex=1.4)
+legend("center",legend=c("None","H", "C","HC", "PHC"),inset=0,lty=c(1,3,4,5,2),bty="n",cex=1.4)
 par(oldMar)
+
 
 dev.off()
 
@@ -179,8 +204,8 @@ pdf("./figures/figure5.pdf", width=7, height=4)
 ### Plot IS pop
 layout(matrix(1:3,ncol=3), width = c(3,3,1),height = c(1,1,1))
 
-ylimC3pop=c(min(logISpop_C3,logISpop_C3TSR,logISpop_C3TSR_P,logISpop_C3TSR_PH)
-            ,max(logISpop_C3,logISpop_C3TSR,logISpop_C3TSR_P,logISpop_C3TSR_PH)+0.1)
+ylimC3pop=c(min(logISpop_C3,logISpop_C3TSR,logISpop_C3TSR_H,logISpop_C3TSR_C,logISpop_C3TSR_HC)
+            ,max(logISpop_C3,logISpop_C3TSR,logISpop_C3TSR_H,logISpop_C3TSR_C,logISpop_C3TSR_HC)+0.1)
 
 rylimC3pop=round(ylimC3pop,2)
 
@@ -194,8 +219,10 @@ axis(1,tck = -0.015,at=seq(min(temp_seq),max(temp_seq),10),labels=seq(min(temp_s
 
 lines(temp_seq,logISpop_C3,lwd=2)
 lines(temp_seq,logISpop_C3TSR,lwd=2,lty=2)
-lines(temp_seq,logISpop_C3TSR_P,lwd=2,lty=3)
-lines(temp_seq,logISpop_C3TSR_PH,lwd=2,lty=4)
+lines(temp_seq,logISpop_C3TSR_H,lwd=2,lty=3)
+lines(temp_seq,logISpop_C3TSR_C,lwd=2,lty=4)
+lines(temp_seq,logISpop_C3TSR_HC,lwd=2,lty=5)
+
 
 mtext(text=expression(log(IS[pop[C-H]])),side=2,line=1,font=1,cex=1)
 mtext(text='Temperature',side=1,line=2.5,font=1,cex=1)
@@ -203,8 +230,8 @@ mtext(expression(bold((A))), side = 3, at=298,line = 0, outer = FALSE,cex=1)
 
 ### Plot ISnet
 
-ylimC3net=c(min(logISnet_CH,logISnet_CHTSR,logISnet_CHTSR_P,logISnet_CHTSR_PH)
-            ,max(logISnet_CH,logISnet_CHTSR,logISnet_CHTSR_P,logISnet_CHTSR_PH)+0.1)
+ylimC3net=c(min(logISnet_CH,logISnet_CHTSR,logISnet_CHTSR_H, logISnet_CHTSR_C, logISnet_CHTSR_HC)
+            ,max(logISnet_CH,logISnet_CHTSR, logISnet_CHTSR_H, logISnet_CHTSR_C, logISnet_CHTSR_C)+0.1)
 rylimC3net=round(ylimC3net,2)
 
 plot(temp_seq,logISnet_CH,ylim=rylimC3net,
@@ -217,8 +244,10 @@ axis(1,tck = -0.015,at=seq(min(temp_seq),max(temp_seq),10),labels=seq(min(temp_s
 
 lines(temp_seq,logISnet_CH,lwd=2)
 lines(temp_seq,logISnet_CHTSR,lwd=2,lty=2)
-lines(temp_seq,logISnet_CHTSR_P,lwd=2,lty=3)
-lines(temp_seq,logISnet_CHTSR_PH,lwd=2,lty=4)
+lines(temp_seq,logISnet_CHTSR_H,lwd=2,lty=3)
+lines(temp_seq,logISnet_CHTSR_C,lwd=2,lty=4)
+lines(temp_seq,logISnet_CHTSR_HC,lwd=2,lty=5)
+
 
 mtext(text=expression(log(IS[net[C-H]])),side=2,line=1,font=1,cex=1)
 mtext(text='Temperature',side=1,line=2.5,font=1,cex=1)
@@ -226,8 +255,9 @@ mtext(expression(bold((B))), side = 3, at=298,line = 0, outer = FALSE,cex=1)
 
 oldMar <- par(mar = c(0,0,0,0))
 plot.new()
-legend("center",legend=c("None","P", "PH","PHC"),inset=0,lty=c(1,3,4,2),bty="n",cex=1.4)
+legend("center",legend=c("None","H", "C","HC", "PHC"),inset=0,lty=c(1,3,4,5,2),bty="n",cex=1.4)
 par(oldMar)
+
 
 dev.off()
 
