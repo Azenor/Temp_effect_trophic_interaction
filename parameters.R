@@ -31,11 +31,11 @@ bmCg = bmCd/1000*6.5
 ## Parameters temperature dependent ##
 
 # Attack rates #
-par_aPH = c(aPH0 = 5*10^13, baPH = 0.05, topt = topt, E = 0.8, E2 = 1.5)
+par_aPH = c(aPH0 = 5*10^13, baPH = 0.25, topt = topt, E = 0.8, E2 = 1.5)
 aPH_seq = rBAU(temp = temp_seq, m = bmHg, par_br = par_aPH)
 #plot(temp_seq,aPH_seq,type="l")
 
-par_aHC = c(aHC0 = 3*10^12, baHC = 0.05, topt = topt, E = 0.74, E2 = 1.15)
+par_aHC = c(aHC0 = 3*10^12, baHC = 0.25, topt = topt, E = 0.74, E2 = 1.15)
 aHC_seq = rBAU(temp = temp_seq, m = bmCg, par_br = par_aHC)
 #plot(temp_seq,aHC_seq,type="l")
 

@@ -32,7 +32,7 @@ bmCg = bmCd/1000 * 6.5
 ## Parameters temperature dependent ##
 
 # Attack rate
-par_aPH = c(aPH0 = 3 * 10^8, baPH = 0.05, topt = Topt, E = 0.5, E2 = 1.5)
+par_aPH = c(aPH0 = 3 * 10^8, baPH = 0.25, topt = Topt, E = 0.5, E2 = 1.5)
 aPH_seq = rBAU(temp = temp_seq, m = bmHg, par_br = par_aPH)
 
 # at optimal temperature

@@ -268,7 +268,7 @@ layout(matrix(c(1, 2, 3, 4, 5,
 
 for(j in 1:length(resEquiBiom[[1]])) {
   plot(temp_seq,  unlist(resEquiBiom[[1]][j]),  type = "l",  ylim  =  c(yLim$min[j],  yLim$max[j]),
-      ylab  =  yLim$name[j],  xlab  =  "Temperature")
+      ylab  =  yLim$name[j],  xlab  =  "Temperature", cex.lab = 1.2)
 
   for(i in 1:length(resEquiBiom)) {
     lines(temp_seq,  unlist(resEquiBiom[[i]][j]),  col  =  colo[i])
@@ -296,7 +296,7 @@ layout(matrix(c(1, 2, 3, 4, 5,
 
 for(j in 1:length(resEquiBiom[[1]])) {
   plot(temp_seq,  unlist(resEquiBiom[[1]][j]),  type = "l",  ylim  =  c(yLim$min[j],  yLim$max[j]),
-      ylab  =  yLim$name[j],  xlab  =  "Temperature")
+      ylab  =  yLim$name[j],  xlab  =  "Temperature", cex.lab = 1.2)
 
   for(i in 1:length(resEquiBiom)) {
     lines(temp_seq,  unlist(resEquiBiom[[i]][j]),  col  =  colo[i])
