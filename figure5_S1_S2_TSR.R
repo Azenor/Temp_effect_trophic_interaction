@@ -245,6 +245,39 @@ dev.off()
 ###### FIGURE Supplementary Materials ######
 
 ## Figure S1 : parameters according to temperature with and without TSR ##
+
+## save as tiff
+
+tiff("./figures/figureS2.tiff", width=10, height=7, units = 'in', res = 300)
+par(mfrow=c(2,3))
+
+plot(temp_seq ,mu_seq, ylim = c(min(mu_seq,mu_seqTSR), max(mu_seq,mu_seqTSR)), type = "l",
+        ylab = expression(mu), xlab = "", cex.lab = 1.2)
+lines(temp_seq,mu_seqTSR,col = "red", lty = 2)
+
+plot(temp_seq, aPH_seq, ylim = c(min(aPH_seq, aPH_seqTSR),max(aPH_seq, aPH_seqTSR)), type = "l",
+        ylab = expression(a[PH]), xlab = "", cex.lab = 1.2)
+lines(temp_seq, aPH_seqTSR, col = "red", lty = 2)
+
+plot(temp_seq, aHC_seq, ylim = c(min(aHC_seq, aHC_seqTSR), max(aHC_seq, aHC_seqTSR)), type = "l",
+        ylab = expression(a[HC]), xlab = "", cex.lab = 1.2)
+lines(temp_seq, aHC_seqTSR, col = "red", lty = 2)
+
+plot(temp_seq, zP_seq, ylim = c(min(zP_seq, zP_seqTSR), max(zP_seq, zP_seqTSR)), type = "l",
+        ylab = expression(z[P]), xlab = "Temperature", cex.lab = 1.2)
+lines(temp_seq, zP_seqTSR, col = "red", lty = 2)
+
+plot(temp_seq, zH_seq, ylim = c(min(zH_seq,zH_seqTSR), max(zH_seq,zH_seqTSR)), type = "l",
+        ylab = expression(z[H]), xlab = "Temperature", cex.lab = 1.2)
+lines(temp_seq, zH_seqTSR, col = "red", lty = 2)
+
+plot(temp_seq, zC_seq, ylim = c(min(zC_seq, zC_seqTSR), max(zC_seq, zC_seqTSR)), type = "l",
+        ylab = expression(z[C]), xlab = "Temperature", cex.lab = 1.2)
+lines(temp_seq, zC_seqTSR, col = "red", lty = 2)
+legend("topleft", legend = c("No TSR", "TSR"), col = c("black", "red"), lty = c(1,2), box.lty = 0)
+dev.off()
+
+## save as pdf
 pdf("./figures/figureS1.pdf", width = 10, height = 8)
 par(mfrow=c(2,3))
 
