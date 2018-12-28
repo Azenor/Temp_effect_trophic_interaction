@@ -261,14 +261,18 @@ for(j in 1:length(resEquiBiom[[1]])){
 
 # save as tiff
 
-tiff("./figures/figureS3.tiff",  width = 10,  height = 6,  units  =  'in',  res  =  300)
+equiBiom_names = c(expression(P[equ[1]]), expression(N[equ[2]]), expression(P[equ[2]]), expression(H[equ[2]]),
+                   expression(N[equ[3]]), expression(P[equ[3]]), expression(H[equ[3]]), expression(C[equ[3]]))
+
+
+tiff("./figures/figureS3.tiff",  width = 10,  height = 7,  units  =  'in',  res  =  300)
 
 layout(matrix(c(1, 2, 3, 4, 5,
                 6, 7, 8, 9, 9),  nrow  =  2,  ncol  =  5,  byrow  =  F),  width  =  c(1, 1, 1, 1, 0.3))
 
 for(j in 1:length(resEquiBiom[[1]])) {
   plot(temp_seq,  unlist(resEquiBiom[[1]][j]),  type = "l",  ylim  =  c(yLim$min[j],  yLim$max[j]),
-      ylab  =  yLim$name[j],  xlab  =  "Temperature", cex.lab = 1.2)
+      ylab  =  equiBiom_names[j],  xlab  =  "Temperature", cex.lab = 1.2, mgp = c(1.8,0.5,0))
 
   for(i in 1:length(resEquiBiom)) {
     lines(temp_seq,  unlist(resEquiBiom[[i]][j]),  col  =  colo[i])
@@ -296,7 +300,7 @@ layout(matrix(c(1, 2, 3, 4, 5,
 
 for(j in 1:length(resEquiBiom[[1]])) {
   plot(temp_seq,  unlist(resEquiBiom[[1]][j]),  type = "l",  ylim  =  c(yLim$min[j],  yLim$max[j]),
-      ylab  =  yLim$name[j],  xlab  =  "Temperature", cex.lab = 1.2)
+      ylab  =  equiBiom_names[j],  xlab  =  "Temperature", cex.lab = 1.2, mgp = c(1.8,0.5,0))
 
   for(i in 1:length(resEquiBiom)) {
     lines(temp_seq,  unlist(resEquiBiom[[i]][j]),  col  =  colo[i])

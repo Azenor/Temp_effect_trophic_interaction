@@ -10,6 +10,7 @@
 
 
 ## Sourced scripts
+
 source('func_equiBiom_logISpop_logISnet.R') # Function to compute log(interaction strength)
 source('func_TSR.R') # Function for temperature-size rule
 source('parameters.R') # Function for temperature-size rule
@@ -248,7 +249,7 @@ dev.off()
 
 ## save as tiff
 
-tiff("./figures/figureS2.tiff", width=10, height=7, units = 'in', res = 300)
+tiff("./figures/figureS1.tiff", width=10, height=8, units = 'in', res = 300)
 par(mfrow=c(2,3))
 
 plot(temp_seq ,mu_seq, ylim = c(min(mu_seq,mu_seqTSR), max(mu_seq,mu_seqTSR)), type = "l",
@@ -302,7 +303,7 @@ plot(temp_seq, zH_seq, ylim = c(min(zH_seq,zH_seqTSR), max(zH_seq,zH_seqTSR)), t
 lines(temp_seq, zH_seqTSR, col = "red", lty = 2)
 
 plot(temp_seq, zC_seq, ylim = c(min(zC_seq, zC_seqTSR), max(zC_seq, zC_seqTSR)), type = "l",
-        ylab = expression(z[C]), xlab = "Temperature", cex.lab = 1.2)
+        ylab = expression(z[C]), xlab = "Temperature", cex.lab = 1)
 lines(temp_seq, zC_seqTSR, col = "red", lty = 2)
 legend("topleft", legend = c("No TSR", "TSR"), col = c("black", "red"), lty = c(1,2), box.lty = 0)
 dev.off()
@@ -315,11 +316,10 @@ tiff("./figures/figureS2.tiff", width=10, height=7, units = 'in', res = 300)
 par(mfrow=c(2,4))
 
 for(i in 1:length(resEquiBiom)){
-
         ylim=c(min(resEquiBiomTSR[[i]],resEquiBiom[[i]]), max(resEquiBiomTSR[[i]],resEquiBiom[[i]]))
 
         plot(temp_seq, resEquiBiom[[i]], type = "l", xlab = "Temperature (K)",
-        ylab = equiBiom_names[i], ylim = ylim, cex.lab = 1.2)
+        ylab = equiBiom_names[i], ylim = ylim, cex.lab = 1.2, mgp = c(1.8,0.5,0))
         lines(temp_seq, resEquiBiomTSR[[i]], col = "red", lty = 2)
 }
 legend("topright", legend = c("No TSR", "TSR"), col = c("black", "red"), lty = c(1,2), box.lty = 0)
@@ -336,7 +336,7 @@ for(i in 1:length(resEquiBiom)){
         ylim=c(min(resEquiBiomTSR[[i]],resEquiBiom[[i]]), max(resEquiBiomTSR[[i]],resEquiBiom[[i]]))
 
         plot(temp_seq, resEquiBiom[[i]], type = "l", xlab = "Temperature (K)",
-        ylab = equiBiom_names[i], ylim = ylim, cex.lab = 1.2)
+        ylab = equiBiom_names[i], ylim = ylim, cex.lab = 1.2, mgp = c(1.8,0.5,0))
         lines(temp_seq, resEquiBiomTSR[[i]], col = "red", lty = 2)
 
 }
