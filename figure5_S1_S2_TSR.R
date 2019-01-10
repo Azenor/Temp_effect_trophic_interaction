@@ -147,7 +147,7 @@ lines(temp_seq,logISpop_C3TSR_C,lwd=2,lty=4)
 lines(temp_seq,logISpop_C3TSR_HC,lwd=2,lty=5)
 
 
-mtext(text=expression(log(IS[pop[C-H]])),side=2,line=1,font=1,cex=1)
+mtext(text=expression(log('IS'[pp]^'C-H')),side=2,line=1,font=1,cex=1)
 mtext(text='Temperature',side=1,line=2.5,font=1,cex=1)
 mtext(expression(bold((A))), side = 3, at=298,line = 0, outer = FALSE,cex=1)
 
@@ -171,7 +171,7 @@ lines(temp_seq,logISnet_CHTSR_C,lwd=2,lty=4)
 lines(temp_seq,logISnet_CHTSR_HC,lwd=2,lty=5)
 
 
-mtext(text=expression(log(IS[net[C-H]])),side=2,line=1,font=1,cex=1)
+mtext(text=expression(log('IS'[net]^'C-H')),side=2,line=1,font=1,cex=1)
 mtext(text='Temperature',side=1,line=2.5,font=1,cex=1)
 mtext(expression(bold((B))), side = 3, at=298,line = 0, outer = FALSE,cex=1)
 
@@ -208,7 +208,7 @@ lines(temp_seq,logISpop_C3TSR_C,lwd=2,lty=4)
 lines(temp_seq,logISpop_C3TSR_HC,lwd=2,lty=5)
 
 
-mtext(text=expression(log(IS[pop[C-H]])),side=2,line=1,font=1,cex=1)
+mtext(text=expression(log('IS'[pp]^'C-H')),side=2,line=1,font=1,cex=1)
 mtext(text='Temperature',side=1,line=2.5,font=1,cex=1)
 mtext(expression(bold((A))), side = 3, at=298,line = 0, outer = FALSE,cex=1)
 
@@ -232,7 +232,7 @@ lines(temp_seq,logISnet_CHTSR_C,lwd=2,lty=4)
 lines(temp_seq,logISnet_CHTSR_HC,lwd=2,lty=5)
 
 
-mtext(text=expression(log(IS[net[C-H]])),side=2,line=1,font=1,cex=1)
+mtext(text=expression(log('IS'[net]^'C-H')),side=2,line=1,font=1,cex=1)
 mtext(text='Temperature',side=1,line=2.5,font=1,cex=1)
 mtext(expression(bold((B))), side = 3, at=298,line = 0, outer = FALSE,cex=1)
 

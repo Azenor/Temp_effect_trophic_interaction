@@ -289,7 +289,7 @@ axis(2, at = seq(0, 1, length.out  =  15),  cex.axis  =  0.6,  labels  =  c(expr
                                           expression(a), expression(a[HC]), expression(a[PH]), expression(z),
                                         expression(z[C]), expression(z[H]), expression(z[P]), expression(mu)), las = 2)
 
-mtext(expression(IS[pop]),  side  =  3,  at  =  0.15,  line  =  1.6,  outer  =  FALSE,  cex  =  1)
+mtext(expression(IS[pp]),  side  =  3,  at  =  0.15,  line  =  1.6,  outer  =  FALSE,  cex  =  1)
 mtext(expression(IS[net]),  side  =  3,  at  =  0.75,  line  =  1.6,  outer  =  FALSE,  cex  =  1)
 
 abline(v  =  0.375,  lty  =  2,  lwd  =  2)
@@ -300,7 +300,7 @@ image.plot(matdataSD2, axes  =  F, col  =  colPlot)
 axis(3, at  =  seq(0, 1, length.out  =  5), cex.axis  =  0.6, labels  =  c("H-P", "C-H",
                                          "H-P", "C-H", "C-P"), font  =  1)
 mtext(expression(bold((B))),  side  =  3,  at  =  0.5, line  =  2.5,  outer  =  FALSE, cex = 1)
-mtext(expression(IS[pop]),  side  =  3,  at  =  0.15, line  =  1.6,  outer  =  FALSE, cex = 1)
+mtext(expression(IS[pp]),  side  =  3,  at  =  0.15, line  =  1.6,  outer  =  FALSE, cex = 1)
 mtext(expression(IS[net]),  side  =  3,  at  =  0.75, line  =  1.6,  outer  =  FALSE, cex = 1)
 abline(v  =  0.375,  lty  =  2,  lwd  =  2)
 

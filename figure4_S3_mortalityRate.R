@@ -128,7 +128,7 @@ for (i in 1:length(mseq)){
   lines(temp_seq, logISpop_C3[[i]], col = colo[i], lwd = 2)
 }
 
-mtext(text = expression(log(IS[pop[C-H]])), side = 2, line = 1, font = 1, cex = 1)
+mtext(text = expression(log('IS'[pp]^'C-H')), side = 2, line = 1, font = 1, cex = 1)
 mtext(text = 'Temperature', side = 1, line = 3, font = 1, cex = 1)
 mtext(expression(bold((A))),  side  =  3,  at = 298, line  =  0,  outer  =  FALSE, cex = 1)
 
@@ -149,7 +149,7 @@ for (i in 1:length(mseq)){
   lines(temp_seq, logISnet_CH[[i]], col = colo[i], lwd = 2)
 }
 
-mtext(text = expression(log(IS[net[C-H]])), side = 2, line = 1, font = 1, cex = 1)
+mtext(text = expression(log('IS'[net]^'C-H')), side = 2, line = 1, font = 1, cex = 1)
 mtext(text = 'Temperature', side = 1, line = 3, font = 1, cex = 1)
 mtext(expression(bold((B))),  side  =  3,  at = 298, line  =  0,  outer  =  FALSE, cex = 1)
 
@@ -190,7 +190,7 @@ for (i in 1:length(mseq)){
   lines(temp_seq, logISpop_C3[[i]], col = colo[i], lwd = 2)
 }
 
-mtext(text = expression(log(IS[pop[C-H]])), side = 2, line = 1, font = 1, cex = 1)
+mtext(text = expression(log('IS'[pp]^'C-H')), side = 2, line = 1, font = 1, cex = 1)
 mtext(text = 'Temperature', side = 1, line = 3, font = 1, cex = 1)
 mtext(expression(bold((A))),  side  =  3,  at = 298, line  =  0,  outer  =  FALSE, cex = 1)
 
@@ -211,7 +211,7 @@ for (i in 1:length(mseq)){
   lines(temp_seq, logISnet_CH[[i]], col = colo[i], lwd = 2)
 }
 
-mtext(text = expression(log(IS[net[C-H]])), side = 2, line = 1, font = 1, cex = 1)
+mtext(text = expression(log('IS'[net]^'C-H')), side = 2, line = 1, font = 1, cex = 1)
 mtext(text = 'Temperature', side = 1, line = 3, font = 1, cex = 1)
 mtext(expression(bold((B))),  side  =  3,  at = 298, line  =  0,  outer  =  FALSE, cex = 1)
 

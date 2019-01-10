@@ -54,7 +54,7 @@ plot(temp_seq, aPH_seq, lwd = 2, axes = F, ann = F, type = 'n', ylim = rylim)
 abline(v = min(temp_seq))
 abline(h = min(aPH_seq))
 
-mtext(text = substitute(paste(Search~rate, "  ", italic(r[i](T)))), side = 2, line = 0.5, font = 1, cex = 1)
+mtext(text = substitute(paste(Search~rate, "  ", italic(a[ij](T)))), side = 2, line = 0.5, font = 1, cex = 1)
 mtext(text = 'Temperature', side = 1, line = 1, font = 1, cex = 1)
 
 mtext(expression(T[opt]),  side  =  1,  at  =  Topt, line  =  0.3,  outer  =  FALSE, cex = 0.8)
@@ -79,7 +79,7 @@ plot(temp_seq, aPH_seq, lwd = 2, axes = F, ann = F, type = 'n', ylim = rylim)
 abline(v = min(temp_seq))
 abline(h = min(aPH_seq))
 
-mtext(text = substitute(paste(Search~rate, "  ", italic(r[i](T)))), side = 2, line = 0.5, font = 1, cex = 1)
+mtext(text = substitute(paste(Search~rate, "  ", italic(a[ij](T)))), side = 2, line = 0.5, font = 1, cex = 1)
 mtext(text = 'Temperature', side = 1, line = 1, font = 1, cex = 1)
 
 mtext(expression(T[opt]),  side  =  1,  at  =  Topt, line  =  0.3,  outer  =  FALSE, cex = 0.8)
